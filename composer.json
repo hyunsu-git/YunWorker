@@ -1,0 +1,6 @@
+{
+    "require": {
+        "monolog/monolog": "^1.24",
+        "workerman/gateway-worker": "^3.0"
+    }
+}
