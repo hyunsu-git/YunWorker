@@ -1,6 +1,7 @@
 {
     "require": {
         "monolog/monolog": "^1.24",
-        "workerman/gateway-worker": "^3.0"
+        "workerman/gateway-worker": "^3.0",
+        "workerman/mysql": "^1.0"
     }
 }

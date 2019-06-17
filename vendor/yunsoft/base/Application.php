@@ -35,10 +35,6 @@ class Application
      */
     public static $container = null;
 
-    /**
-     * @var Logger
-     */
-    private static $logger = null;
 
     /**
      * 框架启动方法
@@ -284,6 +280,4 @@ class Application
 
         return $core[$name];
     }
-
-
 }

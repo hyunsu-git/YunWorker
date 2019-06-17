@@ -33,6 +33,9 @@ class Event
     {
         \Yun::addWorker($businessWorker);
 
+        $error_handler = new ErrorHandler();
+        $error_handler->register();
+
         self::$eventHandle->onWorkerStart($businessWorker);
     }
 

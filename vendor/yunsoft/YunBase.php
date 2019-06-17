@@ -64,7 +64,10 @@ class YunBase
             return self::$logger;
         }
 
-        return self::$logger = \yun\base\Application::createObject(\yun\base\Application::getComponents('log'),['system']);
+        self::$logger = \yun\base\Application::createObject(\yun\base\Application::getComponents('log'), ['system']);
+        self::$logger->flushInterval = 0;
+
+        return self::$logger;
     }
 
 

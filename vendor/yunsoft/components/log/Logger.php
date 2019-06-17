@@ -187,13 +187,18 @@ class Logger
      * 记录日志
      * @param $obj mixed 日志内容
      * @param $level int 日志级别,采用 \Monolog\Logger::* 的模式
+     * @param $format boolean 是否需要格式化信息,设置为false为不格式化
      * @return void
      * @author hyunsu
      * @time 2019-06-11 21:18
      */
-    public function log($obj, $level)
+    public function log($obj, $level, $format = null)
     {
-        $message = $this->formatLogMessage($obj, false);
+        if ($format !== false) {
+            $message = $this->formatLogMessage($obj, false);
+        }else{
+            $message = $obj;
+        }
 
         $message['level'] = $level;
 
@@ -257,10 +262,11 @@ class Logger
      */
     public function flush()
     {
-        if ($this->handler == LOG_HANDLER_FILE) {
+        if ($this->handler === LOG_HANDLER_FILE) {
             $this->flushFile();
+        }else if ($this->handler === LOG_HANDLER_DB) {
+            //todo
         }
-
 
         $this->messages = [];
     }

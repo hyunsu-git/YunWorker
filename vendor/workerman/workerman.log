@@ -2692,3 +2692,497 @@ Stack trace:
 2019-06-12 09:48:47 pid:1366 Workerman[start.php] start in DEBUG mode
 2019-06-12 09:48:48 pid:1366 Workerman[start.php] stopping ...
 2019-06-12 09:48:48 pid:1366 Workerman[start.php] has been stopped
+2019-06-12 14:56:38 pid:4891 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:57:15 pid:4891 Workerman[start.php] stopping ...
+2019-06-12 14:57:15 pid:4891 worker[DDW-business:4893] exit with status 65280
+2019-06-12 14:57:15 pid:4891 worker[DDW-business:4894] exit with status 65280
+2019-06-12 14:57:15 pid:4891 Workerman[start.php] has been stopped
+2019-06-12 14:57:20 pid:4907 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:57:23 pid:4907 Workerman[start.php] stopping ...
+2019-06-12 14:57:23 pid:4907 worker[DDW-business:4910] exit with status 65280
+2019-06-12 14:57:23 pid:4907 worker[DDW-business:4909] exit with status 65280
+2019-06-12 14:57:23 pid:4907 Workerman[start.php] has been stopped
+2019-06-12 14:58:01 pid:4922 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:58:02 pid:4922 Workerman[start.php] stopping ...
+2019-06-12 14:58:02 pid:4922 worker[DDW-business:4925] exit with status 256
+2019-06-12 14:58:02 pid:4922 worker[DDW-business:4924] exit with status 256
+2019-06-12 14:58:02 pid:4922 Workerman[start.php] has been stopped
+2019-06-12 14:58:23 pid:4936 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:58:24 pid:4936 Workerman[start.php] stopping ...
+2019-06-12 14:58:24 pid:4936 worker[DDW-business:4938] exit with status 256
+2019-06-12 14:58:24 pid:4936 worker[DDW-business:4939] exit with status 256
+2019-06-12 14:58:24 pid:4936 Workerman[start.php] has been stopped
+2019-06-12 14:59:06 pid:4951 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:59:06 pid:4953 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-12 14:59:06 pid:4954 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-12 14:59:07 pid:4953 Worker[4953] process terminated
+2019-06-12 14:59:07 pid:4954 Worker[4954] process terminated
+2019-06-12 14:59:07 pid:4951 worker[DDW-business:4954] exit with status 64000
+2019-06-12 14:59:07 pid:4951 worker[DDW-business:4953] exit with status 64000
+2019-06-12 14:59:07 pid:4960 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:07 pid:4959 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:08 pid:4960 Worker[4960] process terminated
+2019-06-12 14:59:08 pid:4959 Worker[4959] process terminated
+2019-06-12 14:59:08 pid:4951 worker[DDW-business:4960] exit with status 64000
+2019-06-12 14:59:08 pid:4951 worker[DDW-business:4959] exit with status 64000
+2019-06-12 14:59:08 pid:4961 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:08 pid:4962 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:09 pid:4961 Worker[4961] process terminated
+2019-06-12 14:59:09 pid:4962 Worker[4962] process terminated
+2019-06-12 14:59:09 pid:4951 worker[DDW-business:4962] exit with status 64000
+2019-06-12 14:59:09 pid:4951 worker[DDW-business:4961] exit with status 64000
+2019-06-12 14:59:09 pid:4964 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:09 pid:4963 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:10 pid:4963 Worker[4963] process terminated
+2019-06-12 14:59:10 pid:4964 Worker[4964] process terminated
+2019-06-12 14:59:10 pid:4951 worker[DDW-business:4963] exit with status 64000
+2019-06-12 14:59:10 pid:4951 worker[DDW-business:4964] exit with status 64000
+2019-06-12 14:59:10 pid:4965 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:10 pid:4966 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:11 pid:4966 Worker[4966] process terminated
+2019-06-12 14:59:11 pid:4965 Worker[4965] process terminated
+2019-06-12 14:59:11 pid:4951 worker[DDW-business:4966] exit with status 64000
+2019-06-12 14:59:11 pid:4951 worker[DDW-business:4965] exit with status 64000
+2019-06-12 14:59:11 pid:4968 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:11 pid:4967 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:12 pid:4967 Worker[4967] process terminated
+2019-06-12 14:59:12 pid:4968 Worker[4968] process terminated
+2019-06-12 14:59:12 pid:4951 worker[DDW-business:4968] exit with status 64000
+2019-06-12 14:59:12 pid:4951 worker[DDW-business:4967] exit with status 64000
+2019-06-12 14:59:12 pid:4970 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:12 pid:4969 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-12 14:59:13 pid:4970 Worker[4970] process terminated
+2019-06-12 14:59:13 pid:4951 Workerman[start.php] stopping ...
+2019-06-12 14:59:13 pid:4969 Worker[4969] process terminated
+2019-06-12 14:59:13 pid:4951 worker[DDW-business:4969] exit with status 64000
+2019-06-12 14:59:13 pid:4951 worker[DDW-business:4970] exit with status 64000
+2019-06-12 14:59:13 pid:4951 Workerman[start.php] has been stopped
+2019-06-12 14:59:19 pid:4973 Workerman[start.php] start in DEBUG mode
+2019-06-12 14:59:19 pid:4975 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-12 14:59:19 pid:4976 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-12 14:59:19 pid:4976 Worker[4976] process terminated
+2019-06-12 14:59:19 pid:4973 Workerman[start.php] stopping ...
+2019-06-12 14:59:19 pid:4975 Worker[4975] process terminated
+2019-06-12 14:59:19 pid:4973 worker[DDW-business:4976] exit with status 64000
+2019-06-12 14:59:19 pid:4973 worker[DDW-business:4975] exit with status 64000
+2019-06-12 14:59:19 pid:4973 Workerman[start.php] has been stopped
+2019-06-14 13:07:17 pid:1762 Workerman[start.php] start in DEBUG mode
+2019-06-14 13:07:17 pid:1764 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-14 13:07:17 pid:1765 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(509): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#12 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#13 {main}
+2019-06-14 13:07:18 pid:1765 Worker[1765] process terminated
+2019-06-14 13:07:18 pid:1764 Worker[1764] process terminated
+2019-06-14 13:07:18 pid:1762 worker[DDW-business:1765] exit with status 64000
+2019-06-14 13:07:18 pid:1762 worker[DDW-business:1764] exit with status 64000
+2019-06-14 13:07:18 pid:1770 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-14 13:07:18 pid:1771 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-14 13:07:19 pid:1771 Worker[1771] process terminated
+2019-06-14 13:07:19 pid:1770 Worker[1770] process terminated
+2019-06-14 13:07:19 pid:1762 worker[DDW-business:1771] exit with status 64000
+2019-06-14 13:07:19 pid:1762 worker[DDW-business:1770] exit with status 64000
+2019-06-14 13:07:19 pid:1772 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-14 13:07:19 pid:1773 Error: Wrong parameters for yun\exception\UserException([string $message [, long $code [, Throwable $previous = NULL]]]) in /data/projects/YunWorker/application/Event.php:15
+Stack trace:
+#0 /data/projects/YunWorker/application/Event.php(15): Exception->__construct(Object(GatewayWorker\BusinessWorker))
+#1 /data/projects/YunWorker/vendor/yunsoft/base/Event.php(39): app\Event->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#2 [internal function]: yun\base\Event::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#3 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(223): call_user_func('\\yun\\base\\Event...', Object(GatewayWorker\BusinessWorker))
+#4 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#5 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(2342): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#6 /data/projects/YunWorker/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1488): GatewayWorker\BusinessWorker->run()
+#8 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1318): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1292): Workerman\Worker::forkWorkersForLinux()
+#10 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1622): Workerman\Worker::forkWorkers()
+#11 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(1571): Workerman\Worker::monitorWorkersForLinux()
+#12 /data/projects/YunWorker/vendor/workerman/workerman/Worker.php(511): Workerman\Worker::monitorWorkers()
+#13 /data/projects/YunWorker/vendor/yunsoft/base/Application.php(55): Workerman\Worker::runAll()
+#14 /data/projects/YunWorker/start.php(17): yun\base\Application::run()
+#15 {main}
+2019-06-14 13:07:19 pid:1773 Worker[1773] process terminated
+2019-06-14 13:07:19 pid:1762 Workerman[start.php] stopping ...
+2019-06-14 13:07:19 pid:1772 Worker[1772] process terminated
+2019-06-14 13:07:19 pid:1762 worker[DDW-business:1773] exit with status 64000
+2019-06-14 13:07:19 pid:1762 worker[DDW-business:1772] exit with status 64000
+2019-06-14 13:07:19 pid:1762 Workerman[start.php] has been stopped
+2019-06-14 13:08:03 pid:1802 Workerman[start.php] start in DEBUG mode
+2019-06-14 13:11:10 pid:1802 Workerman[start.php] stopping ...
+2019-06-14 13:11:10 pid:1802 worker[DDW-business:1804] exit with status 256
+2019-06-14 13:11:10 pid:1802 worker[DDW-business:1805] exit with status 256
+2019-06-14 13:11:10 pid:1802 Workerman[start.php] has been stopped
+2019-06-14 15:46:30 pid:3217 Workerman[start.php] start in DEBUG mode
+2019-06-14 16:05:26 pid:3217 Workerman[start.php] stopping ...
+2019-06-14 16:05:26 pid:3217 worker[DDW-business:3220] exit with status 256
+2019-06-14 16:05:26 pid:3217 worker[DDW-business:3219] exit with status 256
+2019-06-14 16:05:26 pid:3217 Workerman[start.php] has been stopped
+2019-06-14 16:05:27 pid:3337 Workerman[start.php] start in DEBUG mode
+2019-06-15 08:53:48 pid:3337 Workerman[start.php] stopping ...
+2019-06-15 08:53:49 pid:3337 worker[DDW-business:3339] exit with status 256
+2019-06-15 08:53:49 pid:3337 worker[DDW-business:3340] exit with status 256
+2019-06-15 08:53:49 pid:3337 Workerman[start.php] has been stopped
+2019-06-15 08:53:51 pid:4644 Workerman[start.php] start in DEBUG mode
+2019-06-15 09:02:17 pid:4644 Workerman[start.php] stopping ...
+2019-06-15 09:02:17 pid:4644 worker[DDW-business:4646] exit with status 256
+2019-06-15 09:02:17 pid:4644 worker[DDW-business:4647] exit with status 256
+2019-06-15 09:02:17 pid:4644 Workerman[start.php] has been stopped
+2019-06-15 09:02:19 pid:4935 Workerman[start.php] start in DEBUG mode
+2019-06-15 09:02:32 pid:4935 Workerman[start.php] stopping ...
+2019-06-15 09:02:32 pid:4935 worker[DDW-business:4937] exit with status 256
+2019-06-15 09:02:32 pid:4935 worker[DDW-business:4938] exit with status 256
+2019-06-15 09:02:32 pid:4935 Workerman[start.php] has been stopped
+2019-06-15 09:06:36 pid:5129 Workerman[start.php] start in DEBUG mode
+2019-06-15 09:06:43 pid:5129 Workerman[start.php] stopping ...
+2019-06-15 09:06:43 pid:5129 worker[DDW-business:5132] exit with status 256
+2019-06-15 09:06:43 pid:5129 worker[DDW-business:5131] exit with status 256
+2019-06-15 09:06:43 pid:5129 Workerman[start.php] has been stopped
+2019-06-15 09:20:14 pid:5266 Workerman[start.php] start in DEBUG mode
+2019-06-15 09:20:19 pid:5266 Workerman[start.php] stopping ...
+2019-06-15 09:20:19 pid:5266 worker[DDW-business:5269] exit with status 256
+2019-06-15 09:20:19 pid:5266 worker[DDW-business:5268] exit with status 256
+2019-06-15 09:20:19 pid:5266 Workerman[start.php] has been stopped
+2019-06-15 10:19:19 pid:5711 Workerman[start.php] start in DEBUG mode
+2019-06-17 10:10:18 pid:1140 Workerman[start.php] start in DEBUG mode
