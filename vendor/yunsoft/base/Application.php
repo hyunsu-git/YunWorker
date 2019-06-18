@@ -98,6 +98,25 @@ class Application
         }
 
         Event::$eventHandle = $event;
+
+        Event::$dispatcher = self::resolveDispatcher();
+    }
+
+    /**
+     * 根据配置初始化分配器
+     * @return bool|mixed
+     * @throws \yun\exception\NotInstantiableException
+     * @author hyunsu
+     * @time 2019-06-17 17:40
+     */
+    public static function resolveDispatcher()
+    {
+        $conf = Config::get('components.dispatcher');
+        if (!$conf || $conf === false) {
+            return false;
+        }
+
+        return self::createObject($conf);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace yun\base;
 
 
 use GatewayWorker\Lib\Gateway;
+use yun\dispatchers\Dispatcher;
 
 /**
  * Class Event
@@ -18,6 +19,11 @@ class Event
      * @var \yun\console\Event
      */
     public static $eventHandle;
+
+    /**
+     * @var Dispatcher
+     */
+    public static $dispatcher;
 
     /**
      * 当businessWorker进程启动时触发。每个进程生命周期内都只会触发一次。
@@ -65,6 +71,7 @@ class Event
 
     /**
      * 当客户端发来数据(Gateway进程收到数据)后触发的回调函数
+     * 内部会根据分发器相关设置,决定将数据交给分发器还是用户的自定义onMessage()方法
      * @param $client_id 全局唯一的客户端socket连接标识
      * @param $recv_data 完整的客户端请求数据，数据类型取决于Gateway所使用协议的decode方法返的回值类型
      * @return void
@@ -77,7 +84,13 @@ class Event
 
         $ret = self::$eventHandle->beforeMessage($client_id, $data);
         if ($ret === true) {
-            self::$eventHandle->beforeMessage($client_id, $data);
+            if (self::$eventHandle->enableDispatcher === false || !self::$dispatcher) {
+                //交给用户自定义onMessage方法
+                self::$eventHandle->onMessage($client_id, $data);
+            }else{
+                //交给分发器处理
+                self::$dispatcher->receive($data);
+            }
         }
     }
 

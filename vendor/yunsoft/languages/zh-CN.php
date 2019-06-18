@@ -6,5 +6,8 @@ return [
     'Configuration `%s` is invalid.'=>'配置项 `%s` 无效。',
     'Configure cannot be empty.'=>'配置不能为空。',
     "User's event file must inherit from \yun\console\Event"=>'用户的监听文件必须继承自\yun\console\Event',
-    'Gateway register service listener address is invalid.'=>'Gateway注册服务监听地址无效。'
+    'Gateway register service listener address is invalid.'=>'Gateway注册服务监听地址无效。',
+    'yun\dispatcher\JsonDispathcer::receive() expects a string parameter,but gives a %s'=>'yun\dispatcher\JsonDispathcer::receive() 接收一个字符串参数，但是传入了 %s类型',
+    'JSON decode failure,content is: %s'=>'JSON解析失败，内容是：%s',
+    'Invalid message,no field %s exists.'=>'无效的消息，没有%s字段。',
 ];
