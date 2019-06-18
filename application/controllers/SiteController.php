@@ -10,6 +10,6 @@ class SiteController extends Controller
 {
     public function actionIndex()
     {
-        var_dump("INdex");
+        var_dump("Index");
     }
 }

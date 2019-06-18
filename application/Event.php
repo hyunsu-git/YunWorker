@@ -4,8 +4,6 @@
 namespace app;
 
 
-use GatewayWorker\Lib\Gateway;
-
 class Event extends \yun\console\Event
 {
     public function onWorkerStart($businessWorker)
@@ -16,8 +14,6 @@ class Event extends \yun\console\Event
     public function onConnect($client_id)
     {
         var_dump($client_id);
-
-        Gateway::sendToAll("aaaa");
     }
 
     public function afterConnect($client_id)
@@ -32,6 +28,6 @@ class Event extends \yun\console\Event
 
     public function onClose($client_id)
     {
-        var_dump($client_id . "@@@");
+
     }
 }

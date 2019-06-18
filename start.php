@@ -9,14 +9,9 @@ defined('YUN_DEBUG') or define('YUN_DEBUG', true);
 defined('YUN_ENV') or define('YUN_ENV', 'dev');
 //defined('YUN_ENV') or define('YUN_ENV', 'prod');
 
-
 require "vendor/yunsoft/init.php";
 
 \yun\base\Loader::setAlias("@app", APP_PATH);
 
 \yun\base\Application::run();
-
-//////////////////////////////
-///
-///
 
