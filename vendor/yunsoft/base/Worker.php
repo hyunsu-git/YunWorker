@@ -58,51 +58,56 @@ class Worker
     }
 
     /**
-     * 记录 info 级别的日志
-     * @param $msg mixed 要记录的内容
-     * @return void
+     * 记录 info 级别的日志,支持记录器连续操作
+     * @param $msg mixed 要记录的信息
+     * @return Logger 返回记录器本身
      * @author hyunsu
-     * @time 2019-06-11 20:58
+     * @time 2019-06-20 14:39
      */
     public function info($msg)
     {
         $this->logger->log($msg, \Monolog\Logger::INFO);
+        return $this->logger;
     }
 
     /**
-     * 记录 warning 级别的日志
-     * @param $msg mixed 要记录的内容
-     * @return void
+     * 记录 warning 级别的日志,支持记录器连续操作
+     * @param $msg mixed 要记录的信息
+     * @return Logger 返回记录器本身
      * @author hyunsu
-     * @time 2019-06-11 20:58
+     * @time 2019-06-20 14:39
      */
     public function warning($msg)
     {
         $this->logger->log($msg, \Monolog\Logger::WARNING);
+        return $this->logger;
     }
 
     /**
-     * 记录 debug 级别的日志
-     * @param $msg mixed 要记录的内容
-     * @return void
+     * 记录 debug 级别的日志,支持记录器连续操作
+     * @param $msg mixed 要记录的信息
+     * @return Logger 返回记录器本身
      * @author hyunsu
-     * @time 2019-06-11 20:58
+     * @time 2019-06-20 14:39
      */
     public function debug($msg)
     {
         $this->logger->log($msg, \Monolog\Logger::DEBUG);
+        return $this->logger;
     }
 
+
     /**
-     * 记录 error 级别的日志
-     * @param $msg mixed 要记录的内容
-     * @return void
+     * 记录 error 级别的日志,支持记录器连续操作
+     * @param $msg mixed 要记录的信息
+     * @return Logger 返回记录器本身
      * @author hyunsu
-     * @time 2019-06-11 20:58
+     * @time 2019-06-20 14:39
      */
     public function error($msg)
     {
         $this->logger->log($msg, \Monolog\Logger::ERROR);
+        return $this->logger;
     }
 
 }

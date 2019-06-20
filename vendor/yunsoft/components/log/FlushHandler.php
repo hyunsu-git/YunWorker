@@ -47,6 +47,18 @@ class FlushHandler extends AbstractProcessingHandler
     }
 
     /**
+     * 清空保存格式化日志的数组
+     * 在调用 [[getLogsToString()]] 或者 [[getLogs()]] 记录完成数据后应该调用此方法
+     * @return void
+     * @author hyunsu
+     * @time 2019-06-20 14:48
+     */
+    public static function clear()
+    {
+        self::$logs = [];
+    }
+
+    /**
      * 对数据进行格式化
      * 注意:这里格式化中并没有 message 变量,所以在记录的时候单独记录了一次message
      * @return LineFormatter

@@ -235,7 +235,7 @@ class Logger
             }else{
                 $message['name'] = get_class($obj);
             }
-            $message['message'] = $obj->getMessage();
+            $message['message'] = trim($obj->getMessage());
 
         }else{
             $message['name'] = '';
@@ -319,6 +319,7 @@ class Logger
         FileHelper::createLogFile($this->file);
 
         file_put_contents($this->file, FlushHandler::getLogsToString(),FILE_APPEND);
+        FlushHandler::clear();
     }
 
 
