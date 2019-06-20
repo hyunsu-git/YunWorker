@@ -6,6 +6,7 @@ namespace yun\base;
 
 use GatewayWorker\Lib\Gateway;
 use yun\dispatchers\Dispatcher;
+use yun\exception\Exception;
 
 /**
  * Class Event
@@ -37,12 +38,16 @@ class Event
      */
     public static function onWorkerStart($businessWorker)
     {
-        \Yun::addWorker($businessWorker);
+        try {
 
-        $error_handler = new ErrorHandler();
-        $error_handler->register();
+            \Yun::addWorker($businessWorker);
 
-        self::$eventHandle->onWorkerStart($businessWorker);
+            self::$eventHandle->onWorkerStart($businessWorker);
+
+        } catch (\Exception $exception) {
+
+            \Yun::getWorker()->error($exception);
+        }
     }
 
     /**
@@ -57,16 +62,23 @@ class Event
      */
     public static function onConnect($client_id)
     {
-        $ret = self::$eventHandle->afterConnect($client_id);
-        if ($ret !== true) {
-            if ($ret === false || $ret == '') {
-                Gateway::closeCurrentClient();
-            }else{
-                Gateway::closeCurrentClient($ret);
+        try {
+
+            $ret = self::$eventHandle->afterConnect($client_id);
+            if ($ret !== true) {
+                if ($ret === false || $ret == '') {
+                    Gateway::closeCurrentClient();
+                } else {
+                    Gateway::closeCurrentClient($ret);
+                }
             }
+
+            self::$eventHandle->onConnect($client_id);
+
+        } catch (\Exception $exception) {
+            \Yun::getWorker()->error($exception);
         }
 
-        self::$eventHandle->onConnect($client_id);
     }
 
     /**
@@ -80,18 +92,25 @@ class Event
      */
     public static function onMessage($client_id, $recv_data)
     {
-        $data = $recv_data;
 
-        $ret = self::$eventHandle->beforeMessage($client_id, $data);
-        if ($ret === true) {
-            if (self::$eventHandle->enableDispatcher === false || !self::$dispatcher) {
-                //交给用户自定义onMessage方法
-                self::$eventHandle->onMessage($client_id, $data);
-            }else{
-                //交给分发器处理
-                self::$dispatcher->receive($data);
+        try {
+            $data = $recv_data;
+
+            $ret = self::$eventHandle->beforeMessage($client_id, $data);
+            if ($ret === true) {
+                if (self::$eventHandle->enableDispatcher === false || !self::$dispatcher) {
+                    //交给用户自定义onMessage方法
+                    self::$eventHandle->onMessage($client_id, $data);
+                } else {
+                    //交给分发器处理
+                    self::$dispatcher->receive($data);
+                }
             }
+
+        } catch (\Exception $exception) {
+            \Yun::getWorker()->error($exception);
         }
+
     }
 
     /**
@@ -106,7 +125,11 @@ class Event
      */
     public static function onClose($client_id)
     {
-        self::$eventHandle->onClose($client_id);
+        try {
+            self::$eventHandle->onClose($client_id);
+        } catch (\Exception $exception) {
+            \Yun::getWorker()->error($exception);
+        }
     }
 
     /**
@@ -155,6 +178,10 @@ class Event
      */
     public static function onWebSocketConnect($client_id, $data)
     {
-        self::$eventHandle->onWebSocketConnect($client_id, $data);
+        try {
+            self::$eventHandle->onWebSocketConnect($client_id, $data);
+        } catch (\Exception $exception) {
+            \Yun::getWorker()->error($exception);
+        }
     }
 }

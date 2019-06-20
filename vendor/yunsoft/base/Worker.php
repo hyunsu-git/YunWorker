@@ -21,7 +21,7 @@ class Worker
     public $id;
 
     /**
-     * @var Logger
+     * @var Logger 对应此进程的日志记录器
      */
     public $logger;
 
@@ -54,7 +54,7 @@ class Worker
 
         $_business_worker_id = $this->id;
 
-        $this->logger = new Logger();
+        $this->logger = new Logger($_business_worker_id);
     }
 
     /**

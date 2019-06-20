@@ -23,7 +23,7 @@ return [
             // gateway名称，status方便查看
             'name' => 'DDW-gateway',
             // gateway进程数
-            'process' => 4,
+            'process' => 1,
             // 本机ip，分布式部署时使用内网ip
             'ip' => '127.0.0.1',
             // 内部通讯起始端口，假如$gateway->count=4，起始端口为4000
@@ -35,7 +35,7 @@ return [
             // bussiness名称
             'name' => 'DDW-business',
             //bussiness 进程数量
-            'process' => 2,
+            'process' => 1,
         ],
         //心跳相关设置
         'ping' => [
@@ -54,7 +54,7 @@ return [
         ],
         'log' => [
             'class' => '\yun\components\log\Logger',
-            'stream' => 'mail',
+            'handler' => LOG_HANDLER_FILE,
         ],
 //        'dispatcher'=>false,    //禁用分配器
         'dispatcher' => [

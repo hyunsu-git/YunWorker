@@ -26,7 +26,6 @@ class ErrorHandler
             ini_set('display_errors', 'Off');
             error_reporting(0);
         }
-
     }
 
     /**
@@ -89,35 +88,31 @@ class ErrorHandler
 
     /**
      * 对异常进行处理
-     * @param $e Exception
+     * @param $exception Exception
      * @return void
      * @author hyunsu
      * @time 2019-06-10 16:13
      */
-    public function handleException($e)
+    public function handleException($exception)
     {
         $ret = array();
 
-        if ($e instanceof Exception || $e instanceof InvalidArgumentException) {
-            $message = $e->getName();
-        }else if ($e instanceof ErrorException) {
-            $message = $e->getName();
+        if ($exception instanceof Exception || $exception instanceof InvalidArgumentException) {
+            $message = $exception->getName();
+        }else if ($exception instanceof ErrorException) {
+            $message = $exception->getName();
         }else{
             $message = 'Exception';
         }
 
         $message .= "\t" . get_class($exception). ': ';
-        $message .= $e->getMessage() . " in " . $exception->getFile() . " on line " . $exception->getLine() . "\r\n";
+        $message .= $exception->getMessage() . " in " . $exception->getFile() . " on line " . $exception->getLine() . "\r\n";
 
         $ret = [
             'message' => $message,
             'timestamp' => microtime(true),
             'trace' => $exception->getTraceAsString(),
         ];
-
-        if (YUN_ENV_DEV) {
-//            print_r($ret);
-        }
 
         \Yun::getLogger()->log($ret, 400, false);
     }
@@ -130,7 +125,6 @@ class ErrorHandler
      */
     public function handleShutdown()
     {
-
         $error = error_get_last();
 
         require_once CORE_PATH . '/exception/ErrorException.php';
@@ -142,14 +136,14 @@ class ErrorHandler
             \Yun::getLogger()->log($exception, 400);
         }
 
-
         \Yun::getLogger()->flush();
 
-        foreach (\Yun::$workers as $worker) {
-            $worker->logger->flush();
+        if (is_array(\Yun::$workers)) {
+            foreach (\Yun::$workers as $worker) {
+                $worker->logger->flush();
+            }
         }
 
-        exit(1);
-
+        exit(-1);
     }
 }

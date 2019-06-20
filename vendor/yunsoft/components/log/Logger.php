@@ -6,6 +6,8 @@ namespace yun\components\log;
 
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Formatter\ScalarFormatter;
+use yun\exception\Exception;
+use yun\exception\InvalidArgumentException;
 use yun\exception\InvalidConfigException;
 use yun\helpers\FileHelper;
 use yun\helpers\SystemHelper;
@@ -204,6 +206,10 @@ class Logger
 
         $this->messages[] = $message;
 
+        if (YUN_DEBUG) {
+            print_r($message);
+        }
+
         if ($this->flushInterval == 0 || (sizeof($this->messages) >= $this->flushInterval)) {
             $this->flush();
         }
@@ -221,33 +227,46 @@ class Logger
      */
     public function formatLogMessage($obj, $debug)
     {
-        $message = ['message' => $obj, 'timestamp' => microtime(true)];
+        $message = ['timestamp' => microtime(true)];
 
+        if ($obj instanceof \Exception) {
+            if ($obj instanceof Exception || $obj instanceof InvalidArgumentException) {
+                $message['name'] = $obj->getName();
+            }else{
+                $message['name'] = get_class($obj);
+            }
+            $message['message'] = $obj->getMessage();
+
+        }else{
+            $message['name'] = '';
+            $message['message'] = $obj;
+        }
+
+        $message['usage'] = [];
+        $message['usage'][] = SystemHelper::memory_get_usage();
+        $message['usage'][] = SystemHelper::memory_get_peak_usage();
+
+        $message['trace'] = [];
         if ($debug || YUN_DEBUG === true || YUN_DEBUG == 1) {
 
             if ($obj instanceof \Exception) {
-                $message['trace'] = [];
+                $trace = $obj->getTrace();
             } else {
                 $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 100);
                 //去掉第一层堆栈,也就是方法自身
 //                if (isset($trace[0]) && isset($trace[0]['function']) && $trace[0]['function'] == 'formatLogMessage') {
 //                    unset($trace[0]);
 //                }
-
                 $message['trace'] = [];
-
-                foreach ($trace as $item) {
-                    if (isset($item['file'])) {
-                        $message['trace'][] = '/' . str_replace(ROOT_PATH, '', "{$item['file']} on line {$item['line']}");
-                    } else if (isset($item['class']) && isset($item['function'])) {
-                        $message['trace'][] = "[memory] call {$item['class']}\\{$item['function']}";
-                    }
+            }
+            foreach ($trace as $item) {
+                if (isset($item['file'])) {
+                    $message['trace'][] = '/' . str_replace(ROOT_PATH, '', "{$item['file']} on line {$item['line']}");
+                } else if (isset($item['class']) && isset($item['function'])) {
+                    $message['trace'][] = "[memory] call {$item['class']}\\{$item['function']}";
                 }
             }
 
-            $message['usage'] = [];
-            $message['usage'][] = SystemHelper::memory_get_usage();
-            $message['usage'][] = SystemHelper::memory_get_peak_usage();
         }
 
         return $message;
@@ -280,6 +299,7 @@ class Logger
     private function flushFile()
     {
         foreach ($this->messages as $msg) {
+
             $level = $msg['level'];
             unset($msg['level']);
 
@@ -298,7 +318,7 @@ class Logger
 
         FileHelper::createLogFile($this->file);
 
-        file_put_contents($this->file, FlushHandler::getLogsToString());
+        file_put_contents($this->file, FlushHandler::getLogsToString(),FILE_APPEND);
     }
 
 

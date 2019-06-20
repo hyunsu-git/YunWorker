@@ -9,6 +9,7 @@ use GatewayWorker\Gateway;
 use GatewayWorker\Register;
 use Workerman\Worker;
 use yun\components\log\Logger;
+use yun\exception\Exception;
 use yun\exception\InvalidConfigException;
 use yun\factory\Container;
 use yun\helpers\ArrayHelper;
@@ -46,6 +47,9 @@ class Application
      */
     public static function run()
     {
+        $handler = new ErrorHandler();
+        $handler->register();
+
         self::runRegisterServer();
         self::runBusinessWorker();
         self::runGateWay();

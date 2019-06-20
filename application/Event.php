@@ -4,16 +4,18 @@
 namespace app;
 
 
+use yun\exception\Exception;
+
 class Event extends \yun\console\Event
 {
     public function onWorkerStart($businessWorker)
     {
-
+        echo 1 / 0;
     }
 
     public function onConnect($client_id)
     {
-        var_dump($client_id);
+
     }
 
     public function afterConnect($client_id)
@@ -23,7 +25,7 @@ class Event extends \yun\console\Event
 
     public function onMessage($client_id, $recv_data)
     {
-        var_dump($recv_data);
+
     }
 
     public function onClose($client_id)
@@ -31,3 +33,4 @@ class Event extends \yun\console\Event
 
     }
 }
+

@@ -7,10 +7,11 @@ class YunBase
     /**
      * @var \yun\base\Worker[]
      */
-    public static $workers;
+    public static $workers = [];
 
     /**
-     * @var Logger
+     * @var Logger 这个记录器与进程无关,是系统级别的全局记录器
+     * 用户记录日志应该使用 \yun\base\Worker 中的记录器
      */
     private static $logger;
 
