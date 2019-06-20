@@ -3,10 +3,8 @@
 
 namespace yun\helpers;
 
-
 class ArrayHelper
 {
-
     /**
      * 将一个一维数组递归格式化成多维数组,一维数组的每个元素作为上一个元素的键
      * 比如:
@@ -67,5 +65,23 @@ class ArrayHelper
         }
 
         return $res;
+    }
+
+    /**
+     * 将驼峰式的名称转换成以空白分隔的名称
+     * 例如 'PostTag' 将被转换成 'Post Tag'
+     * @param string $name 要转换的名称
+     * @param bool $ucwords 是否将每一个首字母大写
+     * @return string
+     */
+    public static function camel2words($name, $ucwords = true)
+    {
+        $label = mb_strtolower(trim(str_replace([
+            '-',
+            '_',
+            '.',
+        ], ' ', preg_replace('/(?<!\p{Lu})(\p{Lu})|(\p{Lu})(?=\p{Ll})/u', ' \0', $name))),'UTF-8');
+
+        return $ucwords ? StringHelper::mb_ucwords($label) : $label;
     }
 }

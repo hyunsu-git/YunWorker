@@ -77,5 +77,12 @@ Application::$config = ArrayHelper::merge(
     require COMMON_PATH . '/config/main.php',
     require COMMON_PATH . '/config/main-local.php'
 );
+
+Application::$params = ArrayHelper::merge(
+    require COMMON_PATH . '/config/params.php',
+    require COMMON_PATH . '/config/params-local.php'
+);
+
+
 //初始化工厂盒子
 Application::$container = new Container();

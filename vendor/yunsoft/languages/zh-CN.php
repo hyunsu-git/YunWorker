@@ -10,4 +10,8 @@ return [
     'yun\dispatcher\JsonDispathcer::receive() expects a string parameter,but gives a %s'=>'yun\dispatcher\JsonDispathcer::receive() 接收一个字符串参数，但是传入了 %s类型',
     'JSON decode failure,content is: %s'=>'JSON解析失败，内容是：%s',
     'Invalid message,no field %s exists.'=>'无效的消息，没有%s字段。',
+    'Non-existent or unsupported command:%s'=>'不存在或不支持的命令：%s',
+    'Failed to write to socket,Redis command was:%s'=>'写入Socket失败，Redis的命令：%s',
+    'Failed to read to socket,Redis command was:%s'=>'从Socket读取失败，Redis的命令：%s',
+    'Received illegal data from redis:%s,Redis command was:%s'=>'从Redis中接收到非法数据：%s，Redis的命令：%s',
 ];

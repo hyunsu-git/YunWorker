@@ -99,4 +99,61 @@ class YunBase
 
         return isset(self::$workers[$_business_worker_id]) ? self::$workers[$_business_worker_id] : null;
     }
+
+    /**
+     * 获取 param.php 文件中写的变量
+     * @param $key string 配置的键,可以是 aa.bb.cc的形式
+     * @param null $default 如果没有设置这个键,默认返回的值
+     * @return array|null
+     * @author hyunsu
+     * @time 2019-06-20 17:32
+     */
+    public static function getParam($key,$default = null)
+    {
+        $config = \yun\base\Application::$params;
+
+        $ary_key = explode('.', $key);
+
+        foreach ($ary_key as $k) {
+            if (isset($config[$k])) {
+                $config = $config[$k];
+            } else {
+                $config = null;
+            }
+        }
+
+        return !$config ? $default : $config;
+    }
+
+    /**
+     * 设置 params 中存储的变量
+     * 关于合并和覆盖的方式
+     * @see \yun\helpers\ArrayHelper::merge();
+     * @see getParams()
+     * @param $key
+     * @param $value
+     * @return void
+     * @author hyunsu
+     * @time 2019-06-20 17:50
+     */
+    public static function setParam($key, $value)
+    {
+        $ary_key = explode('.', $key);
+
+        $customer_param = [];
+
+        $temp = &$customer_param;
+
+        foreach ($ary_key as $k) {
+            $temp[$k] = [];
+            $temp = &$temp[$k];
+        }
+
+        $temp = $value;
+
+        $params = \yun\base\Application::$params;
+
+        \yun\base\Application::$params = \yun\helpers\ArrayHelper::merge($params, $customer_param);
+    }
+
 }

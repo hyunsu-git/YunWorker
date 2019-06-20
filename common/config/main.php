@@ -63,6 +63,23 @@ return [
 //            'dataField'=>'data',
 //            'delimiter'=>'.'
 //            'actionErrorMode'=>ACTION_ERROR_NULL
+        ],
+        'redis'=>[
+            'class'=>'\yun\components\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
+//            'password'=>'',
+        ],
+
+        'mysql'=>[
+            'class'=>'\yun\components\mysql\Connection',
+            'host'=>'localhost',
+            'port'=>3306,
+            'user'=>'',
+            'password'=>'',
+            'dbname'=>'',
+            'charset'=>'utf8'
         ]
     ],
 

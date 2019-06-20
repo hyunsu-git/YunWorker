@@ -39,14 +39,12 @@ class Event
     public static function onWorkerStart($businessWorker)
     {
         try {
-
             \Yun::addWorker($businessWorker);
 
             self::$eventHandle->onWorkerStart($businessWorker);
 
         } catch (\Exception $exception) {
-
-//            \Yun::getWorker()->error($exception)->flush();
+            \Yun::getWorker()->error($exception)->flush();
         }
     }
 
@@ -76,7 +74,7 @@ class Event
             self::$eventHandle->onConnect($client_id);
 
         } catch (\Exception $exception) {
-//            \Yun::getWorker()->error($exception)->flush();
+            \Yun::getWorker()->error($exception)->flush();
         }
 
     }
@@ -128,7 +126,7 @@ class Event
         try {
             self::$eventHandle->onClose($client_id);
         } catch (\Exception $exception) {
-//            \Yun::getWorker()->error($exception)->flush();
+            \Yun::getWorker()->error($exception)->flush();
         }
     }
 
@@ -181,7 +179,7 @@ class Event
         try {
             self::$eventHandle->onWebSocketConnect($client_id, $data);
         } catch (\Exception $exception) {
-//            \Yun::getWorker()->error($exception)->flush();
+            \Yun::getWorker()->error($exception)->flush();
         }
     }
 }

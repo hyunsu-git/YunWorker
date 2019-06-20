@@ -14,4 +14,3 @@ require "vendor/yunsoft/init.php";
 \yun\base\Loader::setAlias("@app", APP_PATH);
 
 \yun\base\Application::run();
-

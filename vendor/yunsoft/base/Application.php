@@ -29,7 +29,15 @@ class Application
      * @see [[\yun\base\Config::get()]]
      * @see [[\yun\base\Config::set()]]
      */
-    public static $config;
+    public static $config = [];
+
+    /**
+     * @var array 全局变量数组
+     * 存储了配置文件 params.php 中的变量
+     * 该数组可以当做全局变量来使用
+     * 
+     */
+    public static $params = [];
 
     /**
      * @var Container

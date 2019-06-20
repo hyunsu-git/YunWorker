@@ -6,6 +6,7 @@ namespace yun\base;
 
 use GatewayWorker\BusinessWorker;
 use yun\components\log\Logger;
+use yun\components\redis\Connection;
 
 /**
  * Class Worker
@@ -26,10 +27,20 @@ class Worker
     public $logger;
 
     /**
+     * @var Connection
+     */
+    public $redis;
+
+    /**
+     * @var \Workerman\MySQL\Connection
+     */
+    public $mysql;
+
+    /**
      * @var BusinessWorker
      */
     private $business_worker;
-
+    
 
     /**
      * Worker constructor.
@@ -53,9 +64,20 @@ class Worker
         global $_business_worker_id;
 
         $_business_worker_id = $this->id;
-
         $this->logger = new Logger($_business_worker_id);
+
+        $redis_conf = Config::get('components.redis');
+        if ($redis_conf !== false && !empty($redis_conf)) {
+            $this->redis = Application::createObject($redis_conf);
+        }
+
+        $mysql_conf = Config::get('components.mysql');
+        if ($mysql_conf !== false && !empty($mysql_conf)) {
+            $mysql = Application::createObject($mysql_conf);
+            $this->mysql = $mysql->getMysql();
+        }
     }
+
 
     /**
      * 记录 info 级别的日志,支持记录器连续操作
