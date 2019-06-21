@@ -4,6 +4,8 @@
 namespace yun\components\mysql;
 
 
+use yun\helpers\StringHelper;
+
 class Connection
 {
     public $host = 'localhost';
@@ -29,7 +31,11 @@ class Connection
     public function getMysql()
     {
         if ($this->mysql === null) {
-            $this->mysql = new \Workerman\MySQL\Connection($this->host, $this->port, $this->user, $this->password, $this->dbname, $this->charset);
+            try {
+                $this->mysql = new \Workerman\MySQL\Connection($this->host, $this->port, $this->user, $this->password, $this->dbname, $this->charset);
+            } catch (\Exception $exception) {
+                echo StringHelper::commandColor("数据库连接失败!!",COMMAND_COLOR_RED) . PHP_EOL;
+            }
         }
         return $this->mysql;
     }
