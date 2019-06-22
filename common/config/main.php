@@ -5,6 +5,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+$process = require __DIR__ . '/process.php';
 
 return [
     'appName' => 'common',
@@ -23,7 +24,7 @@ return [
             // gateway名称，status方便查看
             'name' => 'DDW-gateway',
             // gateway进程数
-            'process' => 1,
+            'processCount' => 4,
             // 本机ip，分布式部署时使用内网ip
             'ip' => '127.0.0.1',
             // 内部通讯起始端口，假如$gateway->count=4，起始端口为4000
@@ -35,7 +36,9 @@ return [
             // bussiness名称
             'name' => 'DDW-business',
             //bussiness 进程数量
-            'process' => 1,
+            'processCount' => 4,
+            //bussiness 进程详细配置
+            'process' => $process
         ],
         //心跳相关设置
         'ping' => [
@@ -64,22 +67,22 @@ return [
 //            'delimiter'=>'.'
 //            'actionErrorMode'=>ACTION_ERROR_NULL
         ],
-        'redis'=>[
-            'class'=>'\yun\components\redis\Connection',
+        'redis' => [
+            'class' => '\yun\components\redis\Connection',
             'hostname' => 'localhost',
             'port' => 6379,
             'database' => 0,
 //            'password'=>'',
         ],
 
-        'mysql'=>[
-            'class'=>'\yun\components\mysql\Connection',
-            'host'=>'localhost',
-            'port'=>3306,
-            'user'=>'',
-            'password'=>'',
-            'dbname'=>'',
-            'charset'=>'utf8'
+        'mysql' => [
+            'class' => '\yun\components\mysql\Connection',
+            'host' => 'localhost',
+            'port' => 3306,
+            'user' => '',
+            'password' => '',
+            'dbname' => '',
+            'charset' => 'utf8'
         ]
     ],
 

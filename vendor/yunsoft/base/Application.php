@@ -35,7 +35,7 @@ class Application
      * @var array 全局变量数组
      * 存储了配置文件 params.php 中的变量
      * 该数组可以当做全局变量来使用
-     * 
+     *
      */
     public static $params = [];
 
@@ -66,7 +66,6 @@ class Application
 
         Worker::runAll();
     }
-
 
 
     /**
@@ -106,7 +105,7 @@ class Application
         $event = self::createObject($event_file);
 
         if (!$event instanceof \yun\console\Event) {
-            throw new InvalidConfigException('eventFile',LangHelper::ts("User's event file must inherit from \yun\console\Event"));
+            throw new InvalidConfigException('eventFile', LangHelper::ts("User's event file must inherit from \yun\console\Event"));
         }
 
         Event::$eventHandle = $event;
@@ -142,9 +141,29 @@ class Application
         // gateway 进程，这里使用Text协议，可以用telnet测试
         $address = Config::get('gateway.gateway.listen');
         if (!$address) {
-            throw new InvalidConfigException('gateway.gateway.listen',LangHelper::ts("Configure cannot be empty."));
+            throw new InvalidConfigException('gateway.gateway.listen', LangHelper::ts("Configure cannot be empty."));
         }
         $gateway = new Gateway($address);
+        //进行路由绑定
+        $gateway->router = function ($worker_connections, $client_connection, $cmd, $buffer) {
+            //$worker_connnections 是一个包含了所有到BusinessWorker进程的连接对象数组。数组的下标是格式为ip:worker_name:worker_id的字符串。
+            //遍历该数组,并检查配置项,筛选允许客户端连接的进程
+            $process_conf = Config::get("gateway.business.process");
+            $wcs = [];
+            foreach ($worker_connections as $k => $connection) {
+                $ary_k = explode(':', $k);
+                $id = $ary_k[2];
+                if (!isset($process_conf[$id]) || $process_conf[$id]['supportConnection'] !== false) {
+                    $wcs [$k] = $connection;
+                }
+            }
+
+            if (!isset($client_connection->businessworker_address) || !isset($worker_connections[$client_connection->businessworker_address])) {
+                $client_connection->businessworker_address = array_rand($wcs);
+            }
+            return $wcs[$client_connection->businessworker_address];
+        };
+
         // gateway名称，status方便查看
         $name = Config::get('gateway.gateway.name');
         if (!$name) {
@@ -152,7 +171,7 @@ class Application
         }
         $gateway->name = $name;
         // gateway进程数
-        $process = intval(Config::get('gateway.gateway.process'));
+        $process = intval(Config::get('gateway.gateway.processCount'));
         if (!$process) {
             $process = 4;
         }
@@ -204,7 +223,7 @@ class Application
         $worker->name = $name;
 
         // bussinessWorker进程数量
-        $process = intval(Config::get('gateway.business.process'));
+        $process = intval(Config::get('gateway.business.processCount'));
         if (!$process) {
             $process = 4;
         }
@@ -244,11 +263,11 @@ class Application
     {
         $listen = $address = Config::get('gateway.register.listen');
         if (!$listen) {
-            throw new InvalidConfigException('gateway.register.listen',LangHelper::ts('Configure cannot be empty.'));
+            throw new InvalidConfigException('gateway.register.listen', LangHelper::ts('Configure cannot be empty.'));
         }
         $ary_listen = explode(":", $listen);
         if (sizeof($ary_listen) != 2 || !$ary_listen[0] || !$ary_listen[1]) {
-            throw new InvalidConfigException('gateway.register.listen',LangHelper::ts('Gateway register service listener address is invalid.'));
+            throw new InvalidConfigException('gateway.register.listen', LangHelper::ts('Gateway register service listener address is invalid.'));
         }
         new Register("text://{$ary_listen[0]}:{$ary_listen[1]}");
     }
@@ -288,7 +307,7 @@ class Application
     public static function coreComponents()
     {
         return [
-            'log'=>'\yun\components\log\Logger',
+            'log' => '\yun\components\log\Logger',
         ];
     }
 

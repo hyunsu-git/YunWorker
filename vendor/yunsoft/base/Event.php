@@ -39,6 +39,13 @@ class Event
     public static function onWorkerStart($businessWorker)
     {
         try {
+
+            $process_conf = Config::get("gateway.business.process");
+            $id = $businessWorker->id;
+            if (isset($process_conf[$id]) && $process_conf[$id]['name']) {
+                $businessWorker->name = $process_conf[$id]['name'];
+            }
+
             \Yun::addWorker($businessWorker);
 
             self::$eventHandle->onWorkerStart($businessWorker);
