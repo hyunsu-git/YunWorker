@@ -14,4 +14,10 @@ return [
     'Failed to write to socket,Redis command was:%s'=>'写入Socket失败，Redis的命令：%s',
     'Failed to read to socket,Redis command was:%s'=>'从Socket读取失败，Redis的命令：%s',
     'Received illegal data from redis:%s,Redis command was:%s'=>'从Redis中接收到非法数据：%s，Redis的命令：%s',
+    'Invalid validation rule:%s'=>'无效的验证规则：%s',
+    '%s can not be blank.'=>'%s 不能为空',
+    'Attributes that do not exist in a class:%s.'=>'类中不存在属性：%s。',
+    'Verification rule `%s` must contain `%s` field.'=>'验证规则%s必须包含字段%s。',
+    '%s does not exist in the database.'=>'%s在数据库中不存在。',
+    '%s is not a valid MAC address.'=>'%s不是有效的MAC地址',
 ];
